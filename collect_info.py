@@ -60,7 +60,7 @@ def print_remote_info(ip, user, password):
         cmds = {
             "CPU Cores"   : "nproc",
             "Memory (MB)" : "free -m | awk '/Mem:/ { print $2 }'",
-            "OS Version"  : "cat /etc/os-release | grep PRETTY_NAME | cut -d '"' -f2"
+            "OS Version": "cat /etc/os-release | grep PRETTY_NAME | cut -d '\"' -f2"
         }
 
         for label, cmd in cmds.items():
