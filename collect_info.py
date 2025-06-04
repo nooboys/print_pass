@@ -64,13 +64,16 @@ def print_remote_info(ip, user, password):
         }
 
         for label, cmd in cmds.items():
-            stdin, stdout, stderr = ssh.exec_command(cmd)
-            output = stdout.read().decode().strip()
-            print(f"{label:15}: {output}")
+            try:
+                stdin, stdout, stderr = ssh.exec_command(cmd)
+                output = stdout.read().decode().strip()
+                print(f"{label:15}: {output}")
+            except Exception as inner_err:
+                print(f"[WARNING] Failed to run '{label}' command: {inner_err}")
 
         ssh.close()
     except Exception as e:
-        print(f"[ERROR] Unable to connect to remote machine: {e}")
+        print(f"[WARNING] Skipped remote machine due to error: {e}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
