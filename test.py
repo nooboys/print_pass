@@ -7,7 +7,7 @@ def load_config(path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python test.py config.yam")
+        print("Usage: python test.py config.yaml")
         sys.exit(1)
 
     config_path = sys.argv[1]
