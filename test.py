@@ -17,5 +17,9 @@ def main():
     for k, v in config.items():
         print(f"{k}: {v}")
 
+    print("\n--- Individual Values ---")
+    print(f"central_api_token: {config.get('central_api_token', 'N/A')}")
+    print(f"serial_number: {config.get('serial_number', 'N/A')}")
+
 if __name__ == "__main__":
     main()
