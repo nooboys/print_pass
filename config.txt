@@ -1,0 +1,5 @@
+username=testuser
+password=mySecretPassword
+central_api_token=abc123456789xyz
+serial_number=SN12345
+device_type=sensor
